@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;HaoQ-game_prepare&apos;" deleteContents="true" description="Delete resource &apos;HaoQ-game_prepare&apos;" element1="/HaoQ-game_prepare" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1339468853337"/>
+</session>

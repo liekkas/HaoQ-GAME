@@ -1,0 +1,29 @@
+package org.liekkas.haoq.llk.views.mediators
+{
+	import org.liekkas.haoq.llk.controllers.events.LLKEvent;
+	import org.liekkas.haoq.llk.models.BrickMapModel;
+	import org.liekkas.haoq.llk.views.BrickMap;
+	import org.robotlegs.mvcs.Mediator;
+	
+	public class BrickMapMediator extends Mediator
+	{
+		[Inject]
+		public var model:BrickMapModel;
+		[Inject]
+		public var view:BrickMap;
+		
+		override public function onRegister():void
+		{
+			view.rows = model.rows;
+			view.cols = model.cols;
+			view.mapData = model.init();
+			
+			eventMap.mapListener(eventDispatcher,LLKEvent.REMOVE_THE_SAME,onRemoveTheSame,LLKEvent);
+		}
+		
+		protected function onRemoveTheSame(evt:LLKEvent):void
+		{
+			view.removeAllChildren();
+		}
+	}
+}

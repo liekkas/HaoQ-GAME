@@ -1,0 +1,12 @@
+package org.liekkas.haoq.llk.views
+{
+	import mx.containers.Canvas;
+	
+	public class Brick extends Canvas
+	{
+		public function Brick()
+		{
+			super();
+		}
+	}
+}

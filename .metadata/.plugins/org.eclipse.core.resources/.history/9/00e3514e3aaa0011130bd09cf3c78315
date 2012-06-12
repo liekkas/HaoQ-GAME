@@ -1,0 +1,67 @@
+package org.liekkas.haoq.llk.views
+{
+	import mx.containers.HBox;
+	import mx.containers.VBox;
+	
+	import org.liekkas.haoq.llk.models.vos.BrickVO;
+	import org.liekkas.haoq.llk.utils.ImageConsts;
+	
+	public class BrickMap extends VBox
+	{
+		protected var _mapData:Array;
+		
+		protected var brickArr:Array = [];
+		
+		public var rows:int;
+		public var cols:int;
+		
+		public function set mapData(value:Array):void
+		{
+			_mapData = value;
+			draw();
+		}
+		
+		protected function draw():void
+		{
+			for(var i:int;i<rows;i++)
+			{
+				var hbox:HBox = new HBox();
+				var hArr:Array = [];
+				for(var j:int=0;j<cols;j++)
+				{
+					var brick:Brick = new Brick();
+					brick.brickVO.row = i;
+					brick.brickVO.col = j;
+					brick.brickVO.imgValue = _mapData[i][j];
+					brick.image = ImageConsts.convert(_mapData[i][j]);
+					hbox.addChild(brick);
+					hArr.push(brick);
+				}
+				this.addChild(hbox);
+				brickArr.push(hArr);
+			}
+		}
+		
+		public function eliminate(last:BrickVO,now:BrickVO):void
+		{
+			var hbox1:HBox = this.getChildAt(last.row) as HBox;
+			var hbox2:HBox = this.getChildAt(now.row) as HBox;
+			
+			if(hbox1&&hbox2)
+			{
+				var brick1:Brick = hbox1.getChildAt(last.col) as Brick;
+				var brick2:Brick = hbox2.getChildAt(now.col) as Brick;
+				
+				if(brick1&&brick2)
+				{
+					this.graphics.lineStyle(1,0x000000,1);
+					this.graphics.moveTo(brick1.x,brick1.y);
+					this.graphics.lineTo(brick2.x,brick2.y);
+					
+					brick1.clear();
+					brick2.clear();
+				}
+			}
+		}
+	}
+}

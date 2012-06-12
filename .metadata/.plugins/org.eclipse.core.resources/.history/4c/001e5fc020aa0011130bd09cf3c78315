@@ -1,0 +1,9 @@
+package org.liekkas.haoq.llk
+{
+	public class controllers
+	{
+		public function controllers()
+		{
+		}
+	}
+}

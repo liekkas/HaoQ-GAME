@@ -1,0 +1,23 @@
+package org.liekkas.haoq.llk.views.mediators
+{
+	import flash.events.MouseEvent;
+	
+	import org.liekkas.haoq.llk.views.Brick;
+	import org.robotlegs.mvcs.Mediator;
+	
+	public class BrickMediator extends Mediator
+	{
+		[Inject]
+		public var view:Brick;
+		
+		override public function onRegister():void
+		{
+			eventMap.mapListener(view.img,MouseEvent.CLICK,onClick,MouseEvent);
+		}
+		
+		protected function onClick(evt:MouseEvent):void
+		{
+			trace(view.row + " " + view.col);
+		}
+	}
+}

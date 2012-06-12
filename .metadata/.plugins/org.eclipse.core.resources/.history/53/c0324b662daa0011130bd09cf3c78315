@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" minWidth="955" minHeight="600" xmlns:views="org.liekkas.haoq.llk.views.*" xmlns:llk="org.liekkas.haoq.llk.*">
+	<llk:LLKContext contextView="{this}"/>
+	<views:BrickMap/>
+</mx:Application>

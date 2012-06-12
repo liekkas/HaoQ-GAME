@@ -1,0 +1,56 @@
+package org.liekkas.haoq.llk.views
+{
+	import mx.containers.HBox;
+	import mx.containers.VBox;
+	
+	import org.liekkas.haoq.llk.utils.ImageConsts;
+	
+	public class GridMap extends VBox
+	{
+		protected var _mapData:Array;
+		
+		public function GridMap()
+		{
+			super();
+			
+			_mapData = [
+				[0,0,0,0,0],
+				[0,1,2,1,0],
+				[0,3,2,3,0],
+				[0,0,0,0,0]
+			];
+			
+			draw();
+		}
+		
+		protected function draw():void
+		{
+			for each(var row:Array in _mapData)
+			{
+				var hbox:HBox = new HBox();
+				for each(var col:int in row)
+				{
+					var brick:Brick = new Brick();
+					if(row[col] == 1)
+					{
+						brick.image = ImageConsts.NUM_1;
+					}
+					else if(row[col] == 2)
+					{
+						brick.image = ImageConsts.NUM_2;
+					}
+					else if(row[col] == 3)
+					{
+						brick.image = ImageConsts.NUM_3;
+					}
+					else if(row[col] == 4)
+					{
+						brick.image = ImageConsts.NUM_4;
+					}
+					hbox.addChild(brick);
+				}
+				this.addChild(hbox);
+			}
+		}
+	}
+}

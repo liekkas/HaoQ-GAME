@@ -1,0 +1,26 @@
+package org.liekkas.haoq.llk.views.mediators
+{
+	import org.liekkas.haoq.llk.controllers.events.LLKEvent;
+	import org.liekkas.haoq.llk.models.BrickMapModel;
+	import org.liekkas.haoq.llk.views.BrickMap;
+	import org.robotlegs.mvcs.Mediator;
+	
+	public class BrickMapMediator extends Mediator
+	{
+		[Inject]
+		public var model:BrickMapModel;
+		[Inject]
+		public var view:BrickMap;
+		
+		override public function onRegister():void
+		{
+			eventMap.mapListener(eventDispatcher,LLKEvent.MAP_DATA_LOADED,onDataLoaded,LLKEvent);
+		}
+		
+		private function onDataLoaded(evt:LLKEvent):void
+		{
+			view.mapData = model.init();
+		}
+		
+	}
+}

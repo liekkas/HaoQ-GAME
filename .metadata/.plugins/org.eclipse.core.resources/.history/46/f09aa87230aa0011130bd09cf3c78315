@@ -1,0 +1,33 @@
+package org.liekkas.haoq.llk.views
+{
+	import mx.containers.HBox;
+	import mx.containers.VBox;
+	
+	import org.liekkas.haoq.llk.utils.ImageConsts;
+	
+	public class BrickMap extends VBox
+	{
+		protected var _mapData:Array;
+		
+		public function set mapData(value:Array):void
+		{
+			_mapData = value;
+			draw();
+		}
+		
+		protected function draw():void
+		{
+			for each(var row:Array in _mapData)
+			{
+				var hbox:HBox = new HBox();
+				for each(var col:int in row)
+				{
+					var brick:Brick = new Brick();
+					brick.image = ImageConsts.convert(col);
+					hbox.addChild(brick);
+				}
+				this.addChild(hbox);
+			}
+		}
+	}
+}

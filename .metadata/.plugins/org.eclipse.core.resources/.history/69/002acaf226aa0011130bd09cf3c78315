@@ -1,0 +1,12 @@
+package org.liekkas.haoq.llk.models
+{
+	import org.robotlegs.mvcs.Actor;
+	
+	public class BrickMapModel extends Actor
+	{
+		public function BrickMapModel()
+		{
+			super();
+		}
+	}
+}

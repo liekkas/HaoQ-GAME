@@ -1,0 +1,19 @@
+package org.liekkas.haoq.llk.controllers.events
+{
+	import flash.events.Event;
+	
+	public class LLKEvent extends Event
+	{
+		public static const MAP_DATA_LOADED:String = "LLKEvent.MAP_DATA_LOADED";
+		
+		public function LLKEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false)
+		{
+			super(type, bubbles, cancelable);
+		}
+		
+		override public function clone():Event
+		{
+			return new LLKEvent(type);
+		}
+	}
+}

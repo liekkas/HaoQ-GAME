@@ -1,0 +1,16 @@
+package org.liekkas.haoq.llk.views.mediators
+{
+	import org.liekkas.haoq.llk.views.Brick;
+	import org.robotlegs.mvcs.Mediator;
+	
+	public class BrickMediator extends Mediator
+	{
+		[Inject]
+		public var view:Brick;
+		
+		override public function onRegister():void
+		{
+			
+		}
+	}
+}

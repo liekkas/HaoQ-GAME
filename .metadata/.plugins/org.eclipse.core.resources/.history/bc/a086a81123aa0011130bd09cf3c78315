@@ -1,0 +1,9 @@
+package org.liekkas.haoq.llk.utils
+{
+	public class ImageConsts
+	{
+		public function ImageConsts()
+		{
+		}
+	}
+}

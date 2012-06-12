@@ -1,0 +1,74 @@
+package org.liekkas.haoq.llk.utils
+{
+	public class ImageConsts
+	{
+		[Embed(source="assets/images/Number_001.png")]
+		public static var NUM_1:Class;
+		
+		[Embed(source="assets/images/Number_002.png")]
+		public static var NUM_2:Class;
+		
+		[Embed(source="assets/images/Number_003.png")]
+		public static var NUM_3:Class;
+		
+		[Embed(source="assets/images/Number_004.png")]
+		public static var NUM_4:Class;
+		
+		[Embed(source="assets/images/Number_005.png")]
+		public static var NUM_5:Class;
+		
+		[Embed(source="assets/images/Number_006.png")]
+		public static var NUM_6:Class;
+		
+		[Embed(source="assets/images/Number_007.png")]
+		public static var NUM_7:Class;
+		
+		[Embed(source="assets/images/Number_008.png")]
+		public static var NUM_8:Class;
+		
+		[Embed(source="assets/images/Number_009.png")]
+		public static var NUM_9:Class;
+		
+		[Embed(source="assets/images/Number_010.png")]
+		public static var NUM_0:Class;
+		
+		public static function convert(value:int):Class
+		{
+			switch(value)
+			{
+				case 0:
+				case 10:
+					return NUM_0;
+					break;
+				case 1:
+					return NUM_1;
+					break;
+				case 2:
+					return NUM_2;
+					break;
+				case 3:
+					return NUM_3;
+					break;
+				case 4:
+					return NUM_4;
+					break;
+				case 5:
+					return NUM_5;
+					break;
+				case 6:
+					return NUM_6;
+					break;
+				case 7:
+					return NUM_7;
+					break;
+				case 8:
+					return NUM_8;
+					break;
+				case 9:
+					return NUM_9;
+					break;
+			}
+			return null;
+		}
+	}
+}

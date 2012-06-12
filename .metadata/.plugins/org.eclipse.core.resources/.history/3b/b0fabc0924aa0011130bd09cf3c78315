@@ -1,0 +1,12 @@
+package org.liekkas.haoq.llk.views
+{
+	import mx.containers.Canvas;
+	
+	public class GridMap extends Canvas
+	{
+		public function GridMap()
+		{
+			super();
+		}
+	}
+}

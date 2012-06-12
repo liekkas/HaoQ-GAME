@@ -1,0 +1,47 @@
+package org.liekkas.haoq.llk.views
+{
+	import mx.containers.Canvas;
+	import mx.controls.Image;
+	
+	import org.liekkas.haoq.llk.models.vos.BrickVO;
+	
+	public class Brick extends Canvas
+	{
+		public var image:Class;
+		
+		public var img:Image = new Image();
+		
+		public var brickVO:BrickVO = new BrickVO();
+		
+		public function Brick()
+		{
+			super();
+		}
+		
+		override protected function createChildren():void
+		{
+			super.createChildren();
+			if(image)
+			{
+				this.width = this.height = 40;
+				
+				this.setStyle("borderColor",0x336699);
+				this.setStyle("borderThickness",1);
+				this.setStyle("borderStyle","solid");
+				
+				img.source = image;
+				img.percentHeight = img.percentWidth = 100;
+				img.buttonMode = true;
+				this.addChild(img);
+			}
+		}
+		
+		public function clear():void
+		{
+			this.setStyle("borderColor",0x336699);
+			this.setStyle("borderThickness",1);
+			this.setStyle("borderStyle","solid");
+			this.removeChild(img);
+		}
+	}
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"  
+	xmlns:views="org.liekkas.haoq.llk.views.*" xmlns:llk="org.liekkas.haoq.llk.*"
+	 backgroundGradientColors="[0x336699,0x003366]"
+	 paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"
+	 layout="vertical" horizontalAlign="center" horizontalScrollPolicy="off">
+	<!--<mx:Style source="assets/llk.css"/>-->
+	<llk:LLKContext contextView="{this}"/>
+	
+	<views:TopBar/>
+	<views:BrickMap/>
+	<mx:Label text="-.- ~祝浩谦小朋友六一儿童节快乐~ -.-" color="yellow" fontSize="16" fontFamily="微软雅黑"
+			  fontThickness="1" fontWeight="bold"/>
+</mx:Application>

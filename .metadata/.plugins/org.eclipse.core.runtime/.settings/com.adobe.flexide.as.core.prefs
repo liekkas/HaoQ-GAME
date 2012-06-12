@@ -1,0 +1,4 @@
+#Tue May 29 17:29:09 CST 2012
+com.adobe.flexide.as.core.filetemplates.=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+eclipse.preferences.version=1
+com.adobe.flexide.as.core.codetemplates.=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="com.adobe.flexide.as.core.codetemplates.action_script" deleted\="false" description\="comment" enabled\="true" name\="mc">/*********************************************&\#13;\r\n*&\#13;\r\n* @author liekkas.zeng &\#13;\r\n* @since &\#13;\r\n*********************************************/</template></templates>

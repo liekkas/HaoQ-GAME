@@ -1,0 +1,15 @@
+package org.liekkas.haoq.llk.models.vos
+{
+	public class BrickVO
+	{
+		public var row:int;
+		
+		public var col:int;
+		
+		public var imgValue:int; //图片对应的值
+		
+		public var x:Number;
+		
+		public var y:Number;
+	}
+}

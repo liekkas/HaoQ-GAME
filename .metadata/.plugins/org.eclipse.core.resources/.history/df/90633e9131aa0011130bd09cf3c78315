@@ -1,0 +1,9 @@
+package org.liekkas.haoq.llk.models.vos
+{
+	public class BrickVO
+	{
+		public function BrickVO()
+		{
+		}
+	}
+}

@@ -1,0 +1,18 @@
+package org.liekkas.haoq.llk.views
+{
+	import mx.containers.Canvas;
+	
+	public class Brick extends Canvas
+	{
+		public function Brick()
+		{
+			super();
+			
+			this.width = this.height = 80;
+			
+			this.setStyle("borderColor",0x336699);
+			this.setStyle("borderThickness",1);
+			this.setStyle("borderStyle","solid");
+		}
+	}
+}

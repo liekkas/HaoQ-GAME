@@ -1,0 +1,36 @@
+package org.liekkas.haoq.llk.utils
+{
+	public class ImageConsts
+	{
+		[Embed(source="assets/images/Number_001.png")]
+		public static var NUM_1:Class;
+		
+		[Embed(source="assets/images/Number_002.png")]
+		public static var NUM_2:Class;
+		
+		[Embed(source="assets/images/Number_003.png")]
+		public static var NUM_3:Class;
+		
+		[Embed(source="assets/images/Number_004.png")]
+		public static var NUM_4:Class;
+		
+		[Embed(source="assets/images/Number_005.png")]
+		public static var NUM_5:Class;
+		
+		[Embed(source="assets/images/Number_006.png")]
+		public static var NUM_6:Class;
+		
+		[Embed(source="assets/images/Number_007.png")]
+		public static var NUM_7:Class;
+		
+		[Embed(source="assets/images/Number_008.png")]
+		public static var NUM_8:Class;
+		
+		[Embed(source="assets/images/Number_009.png")]
+		public static var NUM_9:Class;
+		
+		[Embed(source="assets/images/Number_010.png")]
+		public static var NUM_0:Class;
+		
+	}
+}

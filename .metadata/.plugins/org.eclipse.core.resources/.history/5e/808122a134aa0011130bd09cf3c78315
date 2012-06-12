@@ -1,0 +1,111 @@
+package org.liekkas.haoq.llk.models
+{
+	import org.liekkas.haoq.llk.controllers.events.LLKEvent;
+	import org.liekkas.haoq.llk.models.vos.BrickVO;
+	import org.robotlegs.mvcs.Actor;
+	
+	/*********************************************
+	 * 地图数据模型
+	 * 
+	 * @author liekkas.zeng 
+	 * @since  2012-5-30 15:07:57
+	 *********************************************/
+	public class BrickMapModel extends Actor
+	{
+		protected var _dataProvider:Array = [];
+		
+		/**
+		 * 行数
+		 * */
+		public var rows:int = 10; 
+		 
+		/**
+		 * 列数
+		 * */
+		public var cols:int = 14;
+		
+		/**
+		 * 图片数
+		 * */
+		public var imageNum:int = 10;
+		
+		/**
+		 * 数据源
+		 * */
+		public function get dataProvider():Array
+		{
+			return _dataProvider;
+		}
+
+		/**
+		 * 初始化数据源
+		 *	 - 游戏进来时生成
+		 *   - 过关了生成
+		 * */
+		public function init():Array
+		{
+			var tempArr:Array = [];
+			//总共多少对数 --这些要成对出现的
+			var totalPairs:int = (rows-2)*(cols-2)*0.5;
+			for(var i:int = 0;i < totalPairs;i ++)
+			{
+				var r:int = Math.round(Math.random()*imageNum);
+				tempArr.push(r,r);
+			}
+			tempArr.sort(randomSort);
+			
+			var zeroArr:Array = [];
+			for(i = 0;i < cols;i ++)
+			{
+				zeroArr.push(-1);
+			}
+			_dataProvider.push(zeroArr);
+			for(i = 0;i < rows-2;i++)
+			{
+				var arr:Array = [];
+				arr.push(-1);
+				for(var j:int = 0;j < cols-2;j++)
+				{
+					arr.push(tempArr[i*(cols-2)+j]);
+				}
+				arr.push(-1);
+				_dataProvider.push(arr);
+			}
+			_dataProvider.push(zeroArr);
+			return _dataProvider;
+		}
+		
+		//数组随机排序帮助函数
+		public function randomSort(a:Object,b:Object):Number
+		{
+			return Math.pow(-1,Math.floor(Math.random()*2));
+		}
+
+		protected var lastVO:BrickVO;
+		
+		public function check(value:BrickVO):void
+		{
+			if(!lastVO)
+			{
+				lastVO = value;
+			}
+			else
+			{
+				compare(lastVO,value);
+			}
+		}
+		
+		public function compare(last:BrickVO,now:BrickVO):Boolean
+		{
+			if(last.imgValue == now.imgValue)
+			{
+				dispatch(new LLKEvent(LLKEvent.REMOVE_THE_SAME));
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+}

@@ -1,0 +1,58 @@
+package org.liekkas.haoq.llk.models
+{
+	import org.robotlegs.mvcs.Actor;
+	
+	/*********************************************
+	 * 地图数据模型
+	 * 
+	 * @author liekkas.zeng 
+	 * @since  2012-5-30 15:07:57
+	 *********************************************/
+	public class BrickMapModel extends Actor
+	{
+		/**
+		 * 数据源
+		 * */
+		protected var _dataProvider:Array = [];
+		
+		/**
+		 * 行数
+		 * */
+		public var rows:int = 16; 
+		 
+		/**
+		 * 列数
+		 * */
+		public var cols:int = 20;
+		
+		/**
+		 * 图片数
+		 * */
+		public var imageNum:int = 10;
+		
+		/**
+		 * 初始化数据源
+		 *	 - 游戏进来时生成
+		 *   - 过关了生成
+		 * */
+		public function init():void
+		{
+			var tempArr:Array = [];
+			//总共多少对数 --这些要成对出现的
+			var totalPairs:int = (rows-2)*(cols-2)*0.5;
+			for(var i:int = 0;i < totalPairs;i ++)
+			{
+				var r:int = Math.round(Math.random()*imageNum);
+				tempArr.push(r,r);
+			}
+			tempArr.sort(randomSort);
+		}
+		
+		//数组随机排序帮助函数
+		public function randomSort(a:Object,b:Object):Number
+		{
+			return Math.pow(-1,Math.floor(Math.random()*2));
+		}
+
+	}
+}

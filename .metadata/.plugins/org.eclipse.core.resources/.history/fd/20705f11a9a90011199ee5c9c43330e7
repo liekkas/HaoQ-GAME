@@ -1,0 +1,20 @@
+package org.liekkas.haoq.llk
+{
+	import flash.display.DisplayObjectContainer;
+	
+	import org.robotlegs.mvcs.Context;
+	
+	/*********************************************
+	 * llk上下文
+	 * 
+	 * @author liekkas.zeng 
+	 * @since  2012-5-29 17:36:25
+	 *********************************************/
+	public class LLKContext extends Context
+	{
+		public function LLKContext(contextView:DisplayObjectContainer=null, autoStartup:Boolean=true)
+		{
+			super(contextView, autoStartup);
+		}
+	}
+}

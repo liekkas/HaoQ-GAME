@@ -1,0 +1,13 @@
+package org.liekkas.haoq.llk.view
+{
+	import flash.display.Sprite;
+	
+	mc
+	public class GridMap extends Sprite;
+	{
+		public function GridMap()
+		{
+			
+		}
+	}
+}

@@ -1,0 +1,12 @@
+package org.liekkas.haoq.llk.views.mediators
+{
+	import org.robotlegs.mvcs.Mediator;
+	
+	public class BrickMapMediator extends Mediator
+	{
+		public function BrickMapMediator()
+		{
+			super();
+		}
+	}
+}

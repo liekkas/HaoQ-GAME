@@ -1,0 +1,29 @@
+package org.liekkas.haoq.llk
+{
+	import flash.display.DisplayObjectContainer;
+	
+	import org.liekkas.haoq.llk.models.BrickMapModel;
+	import org.liekkas.haoq.llk.views.Brick;
+	import org.liekkas.haoq.llk.views.BrickMap;
+	import org.liekkas.haoq.llk.views.mediators.BrickMapMediator;
+	import org.liekkas.haoq.llk.views.mediators.BrickMediator;
+	import org.robotlegs.mvcs.Context;
+	
+	public class LLKContext extends Context
+	{
+		public function LLKContext(contextView:DisplayObjectContainer=null, autoStartup:Boolean=true)
+		{
+			super(contextView, autoStartup);
+		}
+		
+		override public function startup():void
+		{
+			injector.mapSingleton(BrickMapModel);
+			
+			mediatorMap.mapView(Brick,BrickMediator);
+			mediatorMap.mapView(BrickMap,BrickMapMediator);
+			
+			super.startup();
+		}
+	}
+}

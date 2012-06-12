@@ -1,0 +1,33 @@
+package org.liekkas.haoq.llk.views.mediators
+{
+	import flash.events.MouseEvent;
+	
+	import org.liekkas.haoq.llk.controllers.events.LLKEvent;
+	import org.liekkas.haoq.llk.models.BrickMapModel;
+	import org.liekkas.haoq.llk.views.Brick;
+	import org.robotlegs.mvcs.Mediator;
+	
+	public class BrickMediator extends Mediator
+	{
+		[Inject]
+		public var view:Brick;
+		[Inject]
+		public var brickMapModel:BrickMapModel;
+		
+		override public function onRegister():void
+		{
+			eventMap.mapListener(view.img,MouseEvent.CLICK,onClick,MouseEvent);
+			eventMap.mapListener(eventDispatcher,LLKEvent.REMOVE_THE_SAME,onRemoveTheSame,LLKEvent);
+		}
+		
+		protected function onClick(evt:MouseEvent):void
+		{
+			brickMapModel.check(view.brickVO);
+		}
+		
+		protected function onRemoveTheSame(evt:LLKEvent):void
+		{
+			
+		}
+	}
+}

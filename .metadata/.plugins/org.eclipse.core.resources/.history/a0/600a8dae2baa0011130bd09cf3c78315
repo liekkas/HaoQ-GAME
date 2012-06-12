@@ -1,0 +1,12 @@
+package org.liekkas.haoq.llk.controllers.commands
+{
+	import org.robotlegs.mvcs.Command;
+	
+	public class StartUpCommand extends Command
+	{
+		public function StartUpCommand()
+		{
+			super();
+		}
+	}
+}

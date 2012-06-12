@@ -1,0 +1,12 @@
+package org.liekkas.haoq.llk.view
+{
+	import flash.display.Sprite;
+	
+	public class Grid extends Sprite
+	{
+		public function Grid()
+		{
+			super();
+		}
+	}
+}
